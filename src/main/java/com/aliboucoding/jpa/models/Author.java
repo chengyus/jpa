@@ -30,6 +30,7 @@ public class Author {
 
   private Integer id;
 
+  @Column
   private String firstName;
 
   private String lastName;

@@ -1,7 +1,6 @@
 package com.aliboucoding.jpa.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +10,15 @@ import lombok.NoArgsConstructor;
 public class Author {
 
   @Id
+  @GeneratedValue(
+    strategy = GenerationType.SEQUENCE,
+    generator = "author_sequence"
+  )
+  @SequenceGenerator(
+    name = "author_sequence",
+    sequenceName = "author_sequence",
+    allocationSize = 1
+  )
   private Integer id;
 
   private String firstName;

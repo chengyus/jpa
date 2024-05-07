@@ -21,5 +21,5 @@ public class Section {
 
   private String name;
 
-  private int order;
+  private int sectionOrder;
 }

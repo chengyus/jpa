@@ -18,9 +18,8 @@ import java.util.List;
 public class Author {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_seq")
-
-  @SequenceGenerator(name = "author_seq", sequenceName = "author_seq", allocationSize = 1)
+  @GeneratedValue
+  //@SequenceGenerator(name = "author_seq", sequenceName = "author_seq", allocationSize = 1)
   /*
    * @TableGenerator(
    * name = "author_id_gen",
@@ -30,7 +29,6 @@ public class Author {
    * allocationSize = 1
    * )
    */
-
   private Integer id;
 
   @Column(name = "f_name", length = 35)

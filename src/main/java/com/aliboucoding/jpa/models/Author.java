@@ -44,7 +44,7 @@ public class Author {
   @ManyToMany(mappedBy = "authors")
   private List<Course> courses;
 
-  @Column(updatable = false, nullable = true) //nullable for now cuz it was using build() later
+  @Column(updatable = false, nullable = false)
   private LocalDateTime createdAt;
 
   @Column(insertable = false)

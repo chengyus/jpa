@@ -42,7 +42,7 @@ public class Author {
 
   private int age;
 
-  @Column(updatable = false, nullable = false)
+  @Column(updatable = false, nullable = true) //nullable for now cuz it was using build() later
   private LocalDateTime createdAt;
 
   @Column(insertable = false)

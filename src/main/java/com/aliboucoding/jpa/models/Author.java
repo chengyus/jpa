@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -41,6 +42,9 @@ public class Author {
   private String email;
 
   private int age;
+
+  @ManyToMany(mappedBy = "authors")
+  private List<Course> courses;
 
   @Column(updatable = false, nullable = true) //nullable for now cuz it was using build() later
   private LocalDateTime createdAt;

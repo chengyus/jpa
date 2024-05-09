@@ -25,9 +25,9 @@ public class Course {
 
   @ManyToMany
   @JoinTable(name = "authors_courses", joinColumns = {
-      @JoinColumn(name = "course_id")
+    @JoinColumn(name = "course_id")
   }, inverseJoinColumns = {
-      @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id")
   })
   private List<Author> authors;
 

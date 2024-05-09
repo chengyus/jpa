@@ -1,19 +1,18 @@
 package com.aliboucoding.jpa.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
+@Builder
 @Entity
-public class Resource extends BaseEntity {
+public class Resource {
 
+  @Id
+  @GeneratedValue
+  private Integer id;
   private String name;
   private int size;
   private String url;

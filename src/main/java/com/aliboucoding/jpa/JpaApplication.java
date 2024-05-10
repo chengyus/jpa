@@ -15,17 +15,17 @@ public class JpaApplication {
   }
 
   // @Bean
-  public CommandLineRunner commandLineRunner(
-    AuthorRepository repository
-  ) {
-    return args -> {
-      var author = Author.builder()
-        .firstName("alibou")
-        .lastName("alibou")
-        .age(34)
-        .email("contact@aliboucoding.com")
-        .build();
-      repository.save(author);
-    };
-  }
+  // public CommandLineRunner commandLineRunner(
+  // AuthorRepository repository
+  // ) {
+  // return args -> {
+  // var author = Author.builder()
+  // .firstName("alibou")
+  // .lastName("alibou")
+  // .age(34)
+  // .email("contact@aliboucoding.com")
+  // .build();
+  // repository.save(author);
+  // };
+  // }
 }

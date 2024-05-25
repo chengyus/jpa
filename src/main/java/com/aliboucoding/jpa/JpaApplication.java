@@ -23,7 +23,7 @@ public class JpaApplication {
       AuthorRepository repository,
       VideoRepository videoRepository) {
     return args -> {
-      for (int i = 0; i < 50; i++) {
+      /*for (int i = 0; i < 50; i++) {
         Faker faker = new Faker();
         var author = Author.builder()
             .firstName(faker.name().firstName())
@@ -32,7 +32,7 @@ public class JpaApplication {
             .email("contact" + i + "@aliboucoding.com")
             .build();
         repository.save(author);
-      }
+      }*/
       /*
        * var video = Video.builder()
        * .name("abc")

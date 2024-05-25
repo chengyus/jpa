@@ -11,6 +11,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class JpaApplication {
 
@@ -22,6 +24,8 @@ public class JpaApplication {
   public CommandLineRunner commandLineRunner(
       AuthorRepository repository,
       VideoRepository videoRepository) {
+    List<Author> annie_fn_match = repository.findAllByFirstName("Annie");
+
     return args -> {
       /*for (int i = 0; i < 50; i++) {
         Faker faker = new Faker();

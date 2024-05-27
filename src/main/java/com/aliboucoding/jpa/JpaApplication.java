@@ -35,6 +35,15 @@ public class JpaApplication {
             .build();
         repository.save(author);
       }
+      //update author with ID = 1
+      var author = Author.builder()
+        .id(1)
+        .firstName("Ali")
+        .lastName("Bouali")
+        .age(34)
+        .email("contact@aliboucoding.com")
+        .build();
+      repository.save(author);
     };
   }
 }

@@ -24,26 +24,17 @@ public class JpaApplication {
   public CommandLineRunner commandLineRunner(
       AuthorRepository repository,
       VideoRepository videoRepository) {
-    List<Author> annie_fn_match = repository.findAllByFirstName("Annie");
-
     return args -> {
-      /*for (int i = 0; i < 50; i++) {
+      for (int i = 0; i < 50; i++) {
         Faker faker = new Faker();
         var author = Author.builder()
             .firstName(faker.name().firstName())
             .lastName(faker.name().lastName())
-            .age(faker.number().numberBetween(19, 50))
-            .email("contact" + i + "@aliboucoding.com")
+            .age(faker.number().numberBetween(20, 80))
+            .email(faker.name().username() + "@aliboucoding.com")
             .build();
         repository.save(author);
-      }*/
-      /*
-       * var video = Video.builder()
-       * .name("abc")
-       * .length(5)
-       * .build();
-       * videoRepository.save(video);
-       */
+      }
     };
   }
 }

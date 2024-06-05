@@ -49,7 +49,12 @@ public class JpaApplication {
       //repository.updateAuthor(22, 1);
 
       // update all authors
-      repository.updateAllAuthorsAges(99);
+      //repository.updateAllAuthorsAges(99);
+
+      //find by named query
+      repository.findByNamedQuery(68)
+        .forEach(System.out::println);
     };
+
   }
 }

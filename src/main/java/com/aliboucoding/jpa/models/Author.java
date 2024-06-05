@@ -3,6 +3,7 @@ package com.aliboucoding.jpa.models;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -12,7 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-// @Table(name = "AUTHOR_TBL")
+@NamedQuery(
+    name = "Author.findByNamedQuery",
+    query = "select a from Author a where a.age >= :age"
+)
 public class Author extends BaseEntity {
 
   // @SequenceGenerator(name = "author_seq", sequenceName = "author_seq",

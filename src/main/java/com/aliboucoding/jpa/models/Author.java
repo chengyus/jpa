@@ -14,13 +14,17 @@ import java.util.List;
 @SuperBuilder
 @Entity
 @NamedQuery(
-    name = "Author.findByNamedQuery",
-    query = "select a from Author a where a.age >= :age"
+  name = "Author.findByNamedQuery",
+  query = "select a from Author a JOIN FETCH a.courses where a.age >= :age"
+)
+@NamedQuery(
+  name = "Author.updateByNamedQuery",
+  query = "update Author a set a.age = :age"
 )
 public class Author extends BaseEntity {
 
-  // @SequenceGenerator(name = "author_seq", sequenceName = "author_seq",
-  // allocationSize = 1)
+  //@SequenceGenerator(name = "author_seq", sequenceName = "author_seq",
+  //allocationSize = 1)
   /*
    * @TableGenerator(
    * name = "author_id_gen",

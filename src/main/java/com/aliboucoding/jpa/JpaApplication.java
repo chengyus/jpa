@@ -36,13 +36,13 @@ public class JpaApplication {
         repository.save(author);
       }
       //update author with ID = 1
-      var author = Author.builder()
-        .id(1)
-        .firstName("Ali")
-        .lastName("Bouali")
-        .age(34)
-        .email("contact@aliboucoding.com")
-        .build();
+      //var author = Author.builder()
+      //  .id(1)
+      //  .firstName("Ali")
+      //  .lastName("Bouali")
+      //  .age(34)
+      //  .email("contact@aliboucoding.com")
+      //  .build();
       //repository.save(author);
 
       // update Author a. set a.age = 22 where a.id = 1
@@ -52,8 +52,10 @@ public class JpaApplication {
       //repository.updateAllAuthorsAges(99);
 
       //find by named query
-      repository.findByNamedQuery(68)
+      repository.findByNamedQuery(70)
         .forEach(System.out::println);
+
+      //repository.updateByNamedQuery(12);
     };
 
   }

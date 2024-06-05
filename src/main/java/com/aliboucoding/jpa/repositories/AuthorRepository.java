@@ -2,6 +2,9 @@ package com.aliboucoding.jpa.repositories;
 
 import com.aliboucoding.jpa.models.Author;
 import java.util.List;
+
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.FetchType;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -10,7 +13,12 @@ import org.springframework.data.repository.query.Param;
 
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
 
+  @Transactional
   List<Author> findByNamedQuery(@Param("age") int age);
+
+  @Modifying
+  @Transactional
+  void updateByNamedQuery(@Param("age") int age);
 
   @Modifying
   @Transactional

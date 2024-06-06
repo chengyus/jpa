@@ -23,8 +23,8 @@ import java.util.List;
 )
 public class Author extends BaseEntity {
 
-  //@SequenceGenerator(name = "author_seq", sequenceName = "author_seq",
-  //allocationSize = 1)
+  @SequenceGenerator(name = "author_seq", sequenceName = "author_seq",
+  allocationSize = 1)
   /*
    * @TableGenerator(
    * name = "author_id_gen",
@@ -48,9 +48,9 @@ public class Author extends BaseEntity {
   @ManyToMany(mappedBy = "authors")
   private List<Course> courses;
 
-  // @Column(updatable = false, nullable = false)
-  // private LocalDateTime createdAt;
+  //@Column(updatable = false, nullable = false)
+  //private LocalDateTime createdAt;
 
-  // @Column(insertable = false)
-  // private LocalDateTime lastModified;
+  //@Column(insertable = false)
+  //private LocalDateTime lastModified;
 }

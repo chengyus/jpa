@@ -1,5 +1,6 @@
 package com.aliboucoding.jpa;
 
+import com.aliboucoding.jpa.models.Course;
 import com.aliboucoding.jpa.models.Video;
 import com.aliboucoding.jpa.repositories.AuthorRepository;
 import com.aliboucoding.jpa.models.Author;
@@ -11,11 +12,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
+import java.util.*;
 
 @SpringBootApplication
 public class JpaApplication {
-
   public static void main(String[] args) {
     SpringApplication.run(JpaApplication.class, args);
   }

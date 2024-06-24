@@ -55,7 +55,7 @@ public class JpaApplication {
       repository.findByNamedQuery(70)
         .forEach(System.out::println);
 
-      //repository.updateByNamedQuery(12);
+      repository.updateByNamedQuery(12);
     };
 
   }

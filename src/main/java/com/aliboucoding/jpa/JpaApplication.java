@@ -5,12 +5,14 @@ import com.aliboucoding.jpa.models.Video;
 import com.aliboucoding.jpa.repositories.AuthorRepository;
 import com.aliboucoding.jpa.models.Author;
 import com.aliboucoding.jpa.repositories.VideoRepository;
+import com.aliboucoding.jpa.specification.AuthorSpecification;
 import com.github.javafaker.Faker;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.domain.Specification;
 
 import java.util.*;
 
@@ -33,7 +35,7 @@ public class JpaApplication {
             .age(faker.number().numberBetween(20, 80))
             .email(faker.name().username() + "@aliboucoding.com")
             .build();
-        repository.save(author);
+        //repository.save(author);
       }
       //update author with ID = 1
       //var author = Author.builder()
@@ -52,10 +54,15 @@ public class JpaApplication {
       //repository.updateAllAuthorsAges(99);
 
       //find by named query
-      repository.findByNamedQuery(70)
-        .forEach(System.out::println);
+      //repository.findByNamedQuery(70).forEach(System.out::println);
 
-      repository.updateByNamedQuery(12);
+      //repository.updateByNamedQuery(12);
+
+      Specification<Author> spec = Specification
+        .where(AuthorSpecification.hasAge(22))
+        .or(AuthorSpecification.firstnameContains("i"))
+        ;
+      repository.findAll(spec).forEach(System.out::println);
     };
 
   }
